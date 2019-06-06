@@ -38,12 +38,11 @@ window.renderStatistics = function (ctx, names, times) {
 
   for (var i = 0; i < names.length; i++) {
     stepX += 90;
-    var stepY = 240 - (150 * Math.round(times[i])) / maxTime;
     ctx.fillStyle = 'hsl(240,' + randomInteger(1, 100) + '%,' + 50 + '%)';
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
-    ctx.fillRect(stepX, stepY, 40, (150 * Math.round(times[i])) / maxTime);
+    ctx.fillRect(stepX, 240 - (150 * Math.round(times[i])) / maxTime, 40, (150 * Math.round(times[i])) / maxTime);
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], stepX, 260);
   }
